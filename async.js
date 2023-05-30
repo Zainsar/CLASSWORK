@@ -180,3 +180,15 @@
 //     },500)
 // }
 // zain()
+
+
+function add(cb){
+console.log(25 + 60)
+    cb();
+}
+
+function multi(){
+console.log(25 * 59);
+}
+
+add(multi)
