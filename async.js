@@ -42,47 +42,141 @@
 // }
 
 // console.log(5 , 15, Equal);
-function CreatAccount(cb) {
+// function CreatAccount(cb) {
 
-    setTimeout(() => {
-        cb();
-        // console.log("Registration Complete");
-    }, 1000);
+//     setTimeout(() => {
+//         cb();
+//         // console.log("Registration Complete");
+//     }, 1000);
 
-    function Login(cb) {
-        setTimeout(() => {
-            cb();
-            // console.log("SuccessFully Login");
-        }, 2000);
+//     function Login(cb) {
+//         setTimeout(() => {
+//             cb();
+//             // console.log("SuccessFully Login");
+//         }, 2000);
 
-    }
+//     }
 
-    function DataCollected(cb) {
-        setTimeout(() => {
-            cb();
-            // console.log("Data Collected");
-        }, 2500);
+//     function DataCollected(cb) {
+//         setTimeout(() => {
+//             cb();
+//             // console.log("Data Collected");
+//         }, 2500);
 
-    }
+//     }
 
-    function DataDisplayed(cb) {
-        setTimeout(() => {
-            cb();
-            // console.log("Data Displayed On Browser")
-        }, 3000);
+//     function DataDisplayed(cb) {
+//         setTimeout(() => {
+//             cb();
+//             // console.log("Data Displayed On Browser")
+//         }, 3000);
 
-    }
+//     }
 
+// }
+// // Call Back Hell
+// CreatAccount(function () {
+//     console.log("Registration Complete");
+//     Login(function () {
+//         console.log("SuccessFully Login");
+//         DataCollected(function () {
+//             console.log("Data Collected");
+
+//             DataDisplayed()
+//         });
+//     });
+// });
+// class Parent {
+//     constructor(name, age, qualification) {
+//         this.Name = name,
+//             this.Age = age,
+//             this.Qualification = qualification;
+//         this.markAttendence = [];
+//     }
+//     attendence() {
+//         this.markAttendence.push(new Date());
+//     }
+//     message() {
+//         console.log("this is parent class");
+//     }
+// }
+
+// class child extends Parent {
+//     constructor(name, age, qualification) {
+//         super(name, age, qualification);
+//     }
+// }
+
+// let person = new Parent("Zain", 40, "Master")
+// let Child = new child("Haziq", 17, "Matric")
+// console.log(person)
+// console.log(Child)
+// person.message()
+// person.attendence()
+// Child.attendence()
+
+
+// Asynchronous & Call Back Function
+
+function registration(cb){
+    setTimeout(function(){
+        cb()
+    },1000)
 }
-// Call Back Hell
-CreatAccount(function () {
-    console.log("Registration Complete");
-    Login(function () {
-        console.log("SuccessFully Login");
-        DataCollected(function () {
-            console.log("Data Collected");
 
-            DataDisplayed()
+function login(cb){
+    setTimeout(function(){
+        cb()
+    },2000)
+}
+
+function dataGet(cb){
+    setTimeout(function(){
+        cb()
+    },1500)
+}
+
+function dataDisplay(){
+    setTimeout(function(){
+        console.log("Data Displayed")
+    },1000)
+}
+
+registration( function(){
+    console.log("Registration Succesfull")
+    login(function(){
+        console.log("login Successfull")
+        dataGet(function(){
+            console.log("Data Gotted")
         });
+        dataDisplay();
     });
 });
+
+// callback function
+
+function Fullname(fname,lname,cb){
+    console.log(fname + lname );
+    cb();
+}
+
+function Surname(){
+    console.log("Syed")
+}
+
+Fullname("Muhammad Zain"," Sarfraz",Surname)
+
+// synchronous Functiuon
+
+console.log("hello")
+console.log("hello world")
+console.log("hello again")
+
+// Asynchronous Function
+
+function zain(data,data2){
+    setTimeout(function(){
+        console.log("Syed"+"Sarfraz")
+    },500)
+}
+zain()
