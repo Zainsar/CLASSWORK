@@ -118,65 +118,65 @@
 
 // Asynchronous & Call Back Function
 
-function registration(cb){
-    setTimeout(function(){
-        cb()
-    },1000)
-}
+// function registration(cb){
+//     setTimeout(function(){
+//         cb()
+//     },1000)
+// }
 
-function login(cb){
-    setTimeout(function(){
-        cb()
-    },2000)
-}
+// function login(cb){
+//     setTimeout(function(){
+//         cb()
+//     },2000)
+// }
 
-function dataGet(cb){
-    setTimeout(function(){
-        cb()
-    },1500)
-}
+// function dataGet(cb){
+//     setTimeout(function(){
+//         cb()
+//     },1500)
+// }
 
-function dataDisplay(){
-    setTimeout(function(){
-        console.log("Data Displayed")
-    },1000)
-}
+// function dataDisplay(){
+//     setTimeout(function(){
+//         console.log("Data Displayed")
+//     },1000)
+// }
 
-registration( function(){
-    console.log("Registration Succesfull")
-    login(function(){
-        console.log("login Successfull")
-        dataGet(function(){
-            console.log("Data Gotted")
-        });
-        dataDisplay();
-    });
-});
+// registration( function(){
+//     console.log("Registration Succesfull")
+//     login(function(){
+//         console.log("login Successfull")
+//         dataGet(function(){
+//             console.log("Data Gotted")
+//         });
+//         dataDisplay();
+//     });
+// });
 
 // callback function
 
-function Fullname(fname,lname,cb){
-    console.log(fname + lname );
-    cb();
-}
+// function Fullname(fname,lname,cb){
+//     console.log(fname + lname );
+//     cb();
+// }
 
-function Surname(){
-    console.log("Syed")
-}
+// function Surname(){
+//     console.log("Syed")
+// }
 
-Fullname("Muhammad Zain"," Sarfraz",Surname)
+// Fullname("Muhammad Zain"," Sarfraz",Surname)
 
 // synchronous Functiuon
 
-console.log("hello")
-console.log("hello world")
-console.log("hello again")
+// console.log("hello")
+// console.log("hello world")
+// console.log("hello again")
 
 // Asynchronous Function
 
-function zain(data,data2){
-    setTimeout(function(){
-        console.log("Syed"+"Sarfraz")
-    },500)
-}
-zain()
+// function zain(data,data2){
+//     setTimeout(function(){
+//         console.log("Syed"+"Sarfraz")
+//     },500)
+// }
+// zain()
