@@ -182,13 +182,86 @@
 // zain()
 
 
-function add(cb){
-console.log(25 + 60)
-    cb();
+// function add(cb) {
+//     console.log(25 + 60)
+//     cb();
+// }
+
+// function multi() {
+//     console.log(25 * 59);
+// }
+
+// add(multi)
+
+// promises in js
+
+// function prom(states){
+//     return new Promise(function(resolve,rejected){
+//         if(states){
+//             resolve("Promise fullfilled")
+//         }
+//         else{
+//             rejected("Rejected due to some error")
+//         }
+//     })
+// }
+
+// // direct simple
+
+// let a = prom(true)
+// // let a = prom(false)
+// console.log(a)
+
+// function fullfilled(result){
+//     console.log(result)
+// }
+
+// function Rejected(error){
+//     console.log(error)
+// }
+
+// // simple call
+// prom(false).then(result)
+// prom(false).catch(error)
+
+// //method chaining 
+// prom(false).then(function fullfilled(result){console.log(result)}).catch(function Rejected(error){console.log(error)})
+
+// // arrow function
+// prom(true).then(result => console.log(result)).catch(error => console.log(error))
+
+
+// // pending states
+// function prom(states){
+//     console.log("please wait")
+//     return new Promise(function(resolve,rejected){
+//     setTimeout(function(){
+//             if(states){
+//                 resolve("Promise fullfilled")
+//             }
+//             else{
+//                 rejected("Rejected due to some error")
+//             }
+//         })
+//     },2000)
+// }
+
+// async, await
+
+async function Getaddition() {
+    console.log("Addition of two number")
+
+    let a = 87;
+    let b = 35;
+    let c = 90;
+    let d = 20
+    let e = 40
+    let result = a + b * c - d / e;
+    await console.log("please wait");
+    return result
 }
 
-function multi(){
-console.log(25 * 59);
-}
-
-add(multi)
+// let a = Getaddition()
+// console.log(a)
+Getaddition().then(result => console.log(result)).catch(error => console.log(error))
+console.log("hello")
