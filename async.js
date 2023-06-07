@@ -248,20 +248,58 @@
 
 // async, await
 
-async function Getaddition() {
-    console.log("Addition of two number")
+// async function Getaddition() {
+//     console.log("Addition of two number")
 
-    let a = 87;
-    let b = 35;
-    let c = 90;
-    let d = 20
-    let e = 40
-    let result = a + b * c - d / e;
-    await console.log("please wait");
-    return result
+//     let a = 87;
+//     let b = 35;
+//     let c = 90;
+//     let d = 20
+//     let e = 40
+//     let result = a + b * c - d / e;
+//     await console.log("please wait");
+//     return result
+// }
+
+// // let a = Getaddition()
+// // console.log(a)
+// Getaddition().then(result => console.log(result)).catch(error => console.log(error))
+// console.log("hello")
+
+// invoke function
+
+// (async function () {
+//     fetch("https://jsonplaceholder.typicode.com/todos").then(response => response.json()
+//     ).then((result)=> {
+//         console.log(result)
+//         for(let i = 0;i < result.length;i++){
+//             document.write("<h2>" + "Title" + ") " + result[i].title + "</h2>"
+//             + "<h3>" + "id) " + result[i].id+"</h3>" + "<h3>" + "completed) " +
+//              result[i].completed+"</h3> "+ "<h3>" + "userId) " + result[i].userId+"</h3> <br>")
+//         }
+//     })
+// }
+
+// )()
+
+(async function () {
+    let rootElement = document.getElementById("rootfolder")
+    // console.log(rootElement)
+    await fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json()
+    ).then((data) => {
+        console.log(data)
+        for (let i = 0; i < data.length; i++) {
+            rootElement.innerHTML += `
+            <div class="card col-lg-4 col-md-6 col-sm-12">
+  <div class="card-body">
+  <h4 class="card-title">${data[i].id} )</h4>
+    <h2 class="card-title">${data[i].title}</h2>
+    <p class="card-text">${data[i].body}</p>
+  </div>
+</div>
+            `
+        }
+    })
 }
 
-// let a = Getaddition()
-// console.log(a)
-Getaddition().then(result => console.log(result)).catch(error => console.log(error))
-console.log("hello")
+)()
